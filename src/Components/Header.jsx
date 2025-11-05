@@ -1,16 +1,16 @@
 import React from 'react';
-import { Link } from 'react-router';
+import { NavLink } from 'react-router';
 
 const Header = () => {
     return (
-        <div>
+        <div className='my-5'>
             
             <nav className='flex gap-8' > 
                 <h1>My website</h1>
-             <Link to="/">Home</Link>
-             <Link to="/users">Users</Link>
-             <Link to="/about">About</Link>
-             <Link to="/contact">Contact Us</Link>
+             <NavLink className={({isActive}) => isActive ? 'font-bold text-emerald-400' : ''} to="/"> Home</NavLink>
+             <NavLink className={({isActive}) => isActive ? 'font-bold text-emerald-400' : ''}  to="/users">Users</NavLink>
+             <NavLink className={({isActive}) => isActive ? 'font-bold text-emerald-400' : ''}  to="/about">About</NavLink>
+             <NavLink className={({isActive}) => isActive ? 'font-bold text-emerald-400' : ''}  to="/contact">Contact Us</NavLink>
             </nav>
 
         </div>

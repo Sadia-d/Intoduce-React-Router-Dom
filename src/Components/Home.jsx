@@ -1,11 +1,25 @@
-import { Outlet } from "react-router";
+import { Outlet, useLocation, useNavigation } from "react-router";
 import Header from "./Header";
+import Footer from "./Footer";
 
 const Home = () => {
+
+    let nevigation = useNavigation();
+    let location = useLocation();
+    console.log(location)
     return (
-        <div>
+        <div> 
            <Header></Header>
-           <Outlet/>
+            <div className="min-h-[600px]">
+                {
+                    nevigation.state === 'loading'?  
+                 <div className="flex justify-center">
+                        <span className="loading loading-spinner loading-xl "></span>
+                 </div>: <Outlet/>
+                }
+               
+            </div>
+           <Footer ></Footer>
         </div>
     );
 };
