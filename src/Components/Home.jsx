@@ -1,12 +1,17 @@
 import { Outlet, useLocation, useNavigation } from "react-router";
 import Header from "./Header";
 import Footer from "./Footer";
+import { useEffect } from "react";
 
 const Home = () => {
 
     let nevigation = useNavigation();
     let location = useLocation();
-    console.log(location)
+
+    useEffect(() => {
+        console.log(location.pathname)
+    },[location])
+  
     return (
         <div> 
            <Header></Header>
